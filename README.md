@@ -107,8 +107,8 @@ Shopping list generation
 Backend API integration
 
 ## 11. Author
-Name:Ithabattula Kavya
+Name:Kusumanchi Charan
 
 Role: Developer
 
-LinkedIn URL: https://www.linkedin.com/in/kavya-itabattula-31220332b
+LinkedIn URL: https://www.linkedin.com/in/charan-kusumanchi
