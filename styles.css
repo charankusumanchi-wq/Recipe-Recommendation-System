@@ -1,0 +1,325 @@
+/* ================= GENERAL ================= */
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #0d0d0d;
+    color: #ffffff;
+}
+
+/* ================= HEADER ================= */
+
+header {
+    background: rgba(20, 20, 20, 0.85);
+    backdrop-filter: blur(10px);
+    text-align: center;
+    padding: 25px 0;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+/* ================= FILTER SECTION ================= */
+
+.filters {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin: 30px 0;
+}
+
+.filters input,
+.filters select {
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.15);
+    background: rgba(255,255,255,0.08);
+    color: white;
+    font-size: 14px;
+}
+
+.filters select option {
+    background: #1a1a1a;
+    color: white;
+}
+
+.filters input::placeholder {
+    color: #aaa;
+}
+
+.filters button {
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.15);
+    background: rgba(255,255,255,0.05);
+    color: white;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.filters button:hover {
+    background: rgba(255,255,255,0.15);
+    transform: translateY(-2px);
+}
+
+/* ================= RECIPE GRID ================= */
+
+.recipe-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 28px;
+    padding: 0 40px 60px 40px;
+}
+
+/* ================= RECIPE CARDS ================= */
+
+.recipe-card {
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(12px);
+    border-radius: 18px;
+    overflow: hidden;
+    transition: 0.4s ease;
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+.recipe-card:hover {
+    transform: translateY(-12px) scale(1.04);
+    box-shadow: 
+        0 0 15px rgba(255, 255, 255, 0.25),
+        0 0 35px rgba(255, 255, 255, 0.15),
+        0 20px 40px rgba(0,0,0,0.6);
+    border: 1px solid rgba(255,255,255,0.3);
+}
+
+.recipe-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: 0.4s ease;
+}
+
+.recipe-card:hover img {
+    transform: scale(1.05);
+}
+
+.recipe-card .content {
+    padding: 18px;
+}
+
+.recipe-card h3 {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+}
+
+.recipe-card p {
+    margin: 6px 0;
+    font-size: 14px;
+    color: #ccc;
+}
+
+.recipe-card button {
+    margin-top: 12px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: none;
+    background: white;
+    color: black;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.recipe-card button:hover {
+    background: #ddd;
+    transform: scale(1.05);
+}
+
+/* ================= LANDING PAGE ================= */
+
+.landing {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    background: url("https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1920&q=80") center center no-repeat;
+    background-size: cover;
+    animation: bgZoom 25s infinite alternate ease-in-out;
+}
+
+.landing::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.4));
+}
+
+.overlay {
+    position: relative;
+    background: rgba(0,0,0,0.55);
+    padding: 50px 70px;
+    border-radius: 18px;
+    backdrop-filter: blur(8px);
+    animation: fadeUp 1.2s ease forwards;
+}
+
+.landing h1 {
+    font-size: 44px;
+    margin-bottom: 15px;
+}
+
+.landing p {
+    font-size: 18px;
+    margin-bottom: 25px;
+    color: #ddd;
+}
+
+#startBtn {
+    padding: 14px 30px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: none;
+    background: white;
+    color: black;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+#startBtn:hover {
+    transform: scale(1.08);
+    box-shadow: 0 10px 30px rgba(255,255,255,0.4);
+}
+
+/* ================= ANIMATIONS ================= */
+
+@keyframes bgZoom {
+    from { transform: scale(1); }
+    to { transform: scale(1.08); }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ================= DETAIL PAGE ================= */
+
+.detail-page {
+    padding: 40px;
+}
+
+.detail-title-box {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.time-badge {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    font-size: 14px;
+}
+
+.detail-image-box {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.detail-page .detail-image-box img {
+    width: 220px;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 14px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.detail-image-box img:hover {
+    box-shadow: 0 0 40px rgba(255,255,255,0.25);
+    transform: scale(1.03);
+}
+
+.detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.detail-box {
+    background: #1a1a1a;
+    padding: 25px;
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,0.08);
+    transition: 0.3s ease;
+}
+.detail-box:hover {
+    transform: translateY(-6px);
+    box-shadow:
+        0 0 15px rgba(255,255,255,0.25),
+        0 0 35px rgba(255,255,255,0.15),
+        0 15px 30px rgba(0,0,0,0.5);
+    border: 1px solid rgba(255,255,255,0.25);
+}
+
+.detail-box h2 {
+    margin-bottom: 15px;
+}
+
+.detail-box p,
+.detail-box li {
+    color: #ccc;
+    line-height: 1.6;
+}
+
+.detail-box ul {
+    padding-left: 20px;
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+.detail-footer {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.detail-footer button {
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    background: white;
+    color: black;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.detail-footer button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255,255,255,0.3);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+    .detail-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .detail-image-box img {
+        width: 100%;
+    }
+}
+#mainPage {
+    display: none;
+}
